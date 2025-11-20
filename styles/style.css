@@ -31,6 +31,7 @@
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   margin-top: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .top-section {
@@ -40,10 +41,15 @@
   font-family: var(--page-acccent-font-family, "PressStart2P"), fantasy;
   line-height: normal;
   text-transform: uppercase;
+  background-color: var(--page-background-color, #fff);
+  border: 2px solid var(--color-black, #000);
+  max-width: 696px;
+  margin: 100px auto;
 }
 
 .subtitle {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin: 0;
 }
 
 main {
@@ -209,14 +215,20 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   padding: 15px 20px;
 }
 
-.button__icon, 
+.button__icon,
 .button__text {
-  color: var(--button-text-color, #fff);
-  mix-blend-mode: difference;
+  color: var(--text-color, #000);
+  transition: color 0.3s ease;
+}
+
+.button:hover .button__icon,
+.button:hover .button__text {
+  color: var(--page-background-color, #fff);
+  mix-blend-mode: normal;
 }
 
 .button__icon {
@@ -241,15 +253,15 @@ main {
   max-width: 355px;
 }
 
-.modal-window[open] {
+.modal__window::backdrop {
+  opacity: 0.75;
+  background: var(--color-black, #000);
+}
+
+.modal__window[open] {
   display: grid;
   grid-template-rows: repeat(2, min-content);
   gap: 30px;
-}
-
-.modal-window::backdrop {
-  opacity: 0.75;
-  background: var(--color-black, #000);
 }
 
 .modal__window-content {
