@@ -102,7 +102,6 @@ main {
     -1px 1px 0 var(--page-background-color, #fff),
     1px 1px 0 var(--page-background-color, #fff),
     0 0 4px var(--page-background-color, #fff);
-  right: 13px;
   top: 24px;
   right: 25px;
   mix-blend-mode: hard-light;
